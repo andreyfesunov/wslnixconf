@@ -24,8 +24,6 @@
     dotnet-sdk
     docker
     ansible
-    yandex-cloud
-    terraform
   ];
 
   wsl.enable = true;

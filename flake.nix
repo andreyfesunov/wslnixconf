@@ -2,7 +2,7 @@
   description = "flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixos-wsl.url = "github:nix-community/nixos-wsl";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
