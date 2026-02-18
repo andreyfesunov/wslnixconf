@@ -24,6 +24,7 @@
     dotnet-sdk
     docker
     ansible
+    tmux
   ];
 
   wsl.enable = true;
