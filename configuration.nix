@@ -5,9 +5,10 @@
 # https://github.com/nix-community/NixOS-WSL
 {
   pkgs,
-  unstable,
+  # unstable,
   ...
-}: {
+}:
+{
   imports = [
     ./system.nix
   ];
@@ -18,17 +19,13 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    lazygit
-    zellij
     fish
     git
-    lazygit
-    neovide
-    unstable.claude-code
     dotnet-sdk
     docker
     ansible
     tmux
+    opencode
   ];
 
   wsl.enable = true;
@@ -61,6 +58,18 @@
 
   programs.fish.enable = true;
   programs.nix-ld.enable = true;
+
+  programs.tmux = {
+    enable = true;
+    plugins = with pkgs; [
+      tmuxPlugins.minimal-tmux-status
+    ];
+    extraConfig = ''
+      set -g @minimal-tmux-use-arrow true
+      set -g @minimal-tmux-right-arrow ""
+      set -g @minimal-tmux-left-arrow ""
+    '';
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
