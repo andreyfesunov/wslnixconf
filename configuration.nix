@@ -26,6 +26,7 @@
     ansible
     tmux
     opencode
+    rustup
   ];
 
   wsl.enable = true;
