@@ -5,6 +5,7 @@
 # https://github.com/nix-community/NixOS-WSL
 {
   pkgs,
+  lib,
   # unstable,
   ...
 }:
@@ -28,7 +29,24 @@
     opencode
     rustup
     gcc
+    pkg-config
+    openssl
+    openssl.dev
+    zlib
+    zlib.dev
   ];
+
+  environment.sessionVariables = {
+    PKG_CONFIG_PATH = lib.makeSearchPath "lib/pkgconfig" [
+      pkgs.openssl.dev
+      pkgs.zlib.dev
+    ];
+
+    OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
+    OPENSSL_INCLUDE_DIR = "${pkgs.openssl.dev}/include";
+    OPENSSL_DIR = pkgs.openssl.dev;
+    OPENSSL_NO_VENDOR = "1";
+  };
 
   wsl.enable = true;
   wsl.defaultUser = "nixos";
