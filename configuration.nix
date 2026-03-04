@@ -27,6 +27,7 @@
     tmux
     opencode
     rustup
+    gcc
   ];
 
   wsl.enable = true;
