@@ -34,6 +34,11 @@
     openssl.dev
     zlib
     zlib.dev
+    typescript
+    nodejs
+    tsx
+    typescript-language-server
+    python313
   ];
 
   environment.sessionVariables = {
