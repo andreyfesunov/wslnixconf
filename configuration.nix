@@ -22,11 +22,9 @@
   environment.systemPackages = with pkgs; [
     fish
     git
-    dotnet-sdk
-    docker
+    docker_29
     ansible
     tmux
-    opencode
     rustup
     gcc
     pkg-config
