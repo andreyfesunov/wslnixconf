@@ -37,6 +37,7 @@
     tsx
     typescript-language-server
     python313
+    just
   ];
 
   environment.sessionVariables = {
