@@ -77,6 +77,16 @@
         max-size = "10m";
         max-file = "3";
       };
+      default-address-pools = [
+        {
+          base = "10.240.0.0/16";
+          size = 24;
+        }
+        {
+          base = "10.241.0.0/16";
+          size = 24;
+        }
+      ];
     };
   };
 
